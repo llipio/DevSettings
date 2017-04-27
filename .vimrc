@@ -1,3 +1,5 @@
+let g:jsx_ext_required = 0
+
 set nocompatible " Stops vim from behaving in a strongly vi-compatible way.
 filetype off
 
@@ -14,8 +16,13 @@ Plugin 'VundleVim/Vundle.vim'
 "
 " original repos on github
 Plugin 'https://github.com/tpope/vim-vividchalk.git'
+Plugin 'https://github.com/Reewr/vim-monokai-phoenix'
+Plugin 'https://github.com/crusoexia/vim-monokai'
+Plugin 'https://github.com/crusoexia/vim-javascript-lib'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'AutoComplPop'
+Plugin 'mxw/vim-jsx'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
@@ -35,14 +42,14 @@ call vundle#end()
 " -------- end --------
 
 syntax on " Turn on Syntax Highlight
-
 filetype plugin indent on " Turn on file type detection
 
-colorscheme vividchalk " Change Color scheme in ~/.vim/colors folder
-" colorscheme vimgirl " Change Color scheme in ~/.vim/colors folder
+" colorscheme vividchalk " Change Color scheme in ~/.vim/colors folder
+colorscheme monokai
 
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/mobile/js/web/* " ctrlp ignores
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 set pastetoggle=<C-z>
 
