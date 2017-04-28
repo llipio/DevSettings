@@ -1,4 +1,8 @@
+### What to display in terminal
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 export EDITOR=vim
+
+### Yarn
+export PATH="$PATH:`yarn global bin`"
