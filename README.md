@@ -8,6 +8,13 @@
 * Install Vundle: `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`  
 * Install Silver Searcher: `https://github.com/ggreer/the_silver_searcher`  
     For OSX: `brew install the_silver_searcher`
+* Install fuzzy finder: https://github.com/junegunn/fzf
+```bash
+brew install fzf
+
+# Install shell extensions
+/usr/local/opt/fzf/Install
+```
 
 ## Bashprofile
 * Add to your bash profile: `vim ~/.bash_profile`  
