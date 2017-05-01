@@ -146,3 +146,7 @@ set background=dark
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" fzf fuzzy finder
+" If installed using Homebrew
+set rtp+=/usr/local/opt/fzf
