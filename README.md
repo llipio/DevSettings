@@ -9,6 +9,8 @@
 * Install Silver Searcher: `https://github.com/ggreer/the_silver_searcher`  
     For OSX: `brew install the_silver_searcher`
 * Install fuzzy finder: https://github.com/junegunn/fzf
+* Install Tmux: `brew install tmux`  
+    http://fideloper.com/mac-vim-tmux
 ```bash
 brew install fzf
 
@@ -21,7 +23,7 @@ brew install fzf
 ```bash
 if [ -f ~/.devBash ]; then
   source ~/.devBash
-fi$
+fi
 ```
 * Symlink devBash to this location: `ln -s ~/Documents/DevSettings/.devBash ~/.devBash`  
 * Refresh: `source ~/.bash_profile`  

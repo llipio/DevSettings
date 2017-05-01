@@ -32,6 +32,7 @@ Plugin 'https://github.com/godlygeek/tabular'
 Plugin 'https://github.com/tpope/vim-unimpaired'
 Plugin 'https://github.com/itspriddle/vim-marked'
 Plugin 'pangloss/vim-javascript'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
@@ -45,8 +46,9 @@ syntax on " Turn on Syntax Highlight
 filetype plugin indent on " Turn on file type detection
 
 " colorscheme vividchalk " Change Color scheme in ~/.vim/colors folder
-colorscheme monokai
-
+" colorscheme monokai
+let g:solarized_termcolors = 256
+colorscheme solarized
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/mobile/js/web/* " ctrlp ignores
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
@@ -150,3 +152,4 @@ endif
 " fzf fuzzy finder
 " If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
+
