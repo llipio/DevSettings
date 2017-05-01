@@ -133,7 +133,7 @@ au BufNewFile,BufRead *.erb set filetype=html
 " set up ignore for ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|node_modules|platforms|Build)$'
-let g:ctrlp_working_path_mode = 'a'
+let g:ctrlp_working_path_mode = 'r'
 
 " syntastic
 let g:syntastic_javascript_checkers = ['eslint']
@@ -153,3 +153,7 @@ endif
 " If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 
+" Shortcuts shortcut
+map <C-f> :FZF<CR>
+map <C-i> :PluginInstall<CR>
+map <C-N> :NERDTree<CR>
