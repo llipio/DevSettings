@@ -8,7 +8,8 @@
 * Install [YARN](https://yarnpkg.com/en/docs/install#mac): `brew install yarn`  
 * Install [Vundle](https://github.com/VundleVim/Vundle.vim): `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`  
 * Install [Silver Searcher](https://github.com/ggreer/the_silver_searcher): `brew install the_silver_searcher`  
-* Install [fuzzy finder](https://github.com/junegunn/fzf): `brew install fzf`
+* Install [fuzzy finder](https://github.com/junegunn/fzf): `brew install fzf`  
+    Install (when prompted for changing shell config, select NO): `/usr/local/opt/fzf/install`
 * Install [Tmux](http://fideloper.com/mac-vim-tmux): `brew install tmux`  
     Setup tmux colors: `echo 'set -g default-terminal "screen-256color"' > ~/.tmux.conf`
 
