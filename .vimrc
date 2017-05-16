@@ -33,6 +33,7 @@ Plugin 'https://github.com/tpope/vim-unimpaired'
 Plugin 'https://github.com/itspriddle/vim-marked'
 Plugin 'pangloss/vim-javascript'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 
 call vundle#end()
 
