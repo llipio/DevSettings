@@ -154,7 +154,9 @@ endif
 " If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 
-" Shortcuts shortcut
+" Shortcuts Shortcuts
+" Available: https://hea-www.harvard.edu/~fine/Tech/vi.html
 map <C-f> :FZF<CR>
 map <C-i> :PluginInstall<CR>
 map <C-N> :NERDTree<CR>
+map <C-_> :Ack<CR>
