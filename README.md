@@ -12,6 +12,7 @@
     Install (when prompted for changing shell config, select NO): `/usr/local/opt/fzf/install`
 * Install [Tmux](http://fideloper.com/mac-vim-tmux): `brew install tmux`  
     Setup tmux colors: `echo 'set -g default-terminal "screen-256color"' > ~/.tmux.conf`
+* Lastly, to install all the plugins specified in `.vimrc` file, open Vim: `vim` and then press `Ctrl` +  `I`.  Installation progress and result will show up on the left pane of Vim.
 
 ## Bashprofile
 * Add to your bash profile: `vim ~/.bash_profile`  or `vim ~/.bashrc`
@@ -21,4 +22,5 @@ if [ -f ~/.devBash ]; then
 fi
 ```
 * Symlink devBash to this location: `ln -s ~/Documents/DevSettings/.devBash ~/.devBash`  
-* Refresh: `source ~/.bash_profile`  
+* Refresh: `source ~/.bash_profile` 
+
