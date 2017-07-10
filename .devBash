@@ -47,6 +47,6 @@ alias ...='cl ../../..'
 function chat {
   echo $(whoami): "'$*'" >> /tmp/chat.log
 }
-alias openChat="echo System: $(whoami) joined >> /tmp/chat.log && tail -f /tmp/chat.log"$                                               
+alias openChat="echo System: $(whoami) joined >> /tmp/chat.log && tail -f /tmp/chat.log"
 alias s=chat
 
