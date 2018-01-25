@@ -30,14 +30,11 @@ export FZF_COMPLETION_OPTS='+c -x'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Useful commands - lcd changes directory and ls
-alias cl=changeDirectory
-function cl {
-  if [-e $1 ]
-  then
-    cd $1
-  fi
+function changeDirectory {
+  cd $1;
   ls -la .
 }
+alias cl=changeDirectory
 # Quickly jumps to parent directores
 alias .='cl ..'
 alias ..='cl ../..'
