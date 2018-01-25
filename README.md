@@ -1,5 +1,7 @@
 # Settings
 
+## No longer maintained, please use [GarageScript](https://github.com/garageScript/DevSettings)
+
 ## Vim - .vimrc
 * Clone the settings file and move it to an appropriate file. I put mine in `~/Documents`.  
     `cd ~/Documents/ && git clone https://github.com/llipio/DevSettings`
