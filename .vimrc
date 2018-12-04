@@ -4,8 +4,8 @@ set nocompatible " Stops vim from behaving in a strongly vi-compatible way.
 filetype off
 
 " -------- Vundle! --------
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=/etc/vim/bundle/vundle
+call vundle#rc('/etc/vim/bundle')
 " alternatively, pass a path where Vundle should install plugins
 " "call vundle#begin('~/some/path/here')
 
@@ -18,22 +18,25 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/tpope/vim-vividchalk.git'
 Plugin 'https://github.com/Reewr/vim-monokai-phoenix'
 Plugin 'https://github.com/crusoexia/vim-monokai'
-Plugin 'https://github.com/crusoexia/vim-javascript-lib'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'w0rp/ale'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
-Plugin 'AutoComplPop'
 Plugin 'mxw/vim-jsx'
-Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive' "Use git directly in vim
+Plugin 'mileszs/ack.vim' "Search for words
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdcommenter' "Comment blocks of code
+Plugin 'vim-airline/vim-airline' "status bar
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'https://github.com/scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe' "Autocompletion, need to python install.py on first install
 Plugin 'https://github.com/godlygeek/tabular'
 Plugin 'https://github.com/tpope/vim-unimpaired'
 Plugin 'https://github.com/itspriddle/vim-marked'
 Plugin 'pangloss/vim-javascript'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'reasonml-editor/vim-reason'
+Plugin 'ElmCast/elm-vim'
 
 call vundle#end()
 
@@ -93,16 +96,11 @@ set tabstop=2 " 2 spaces for a tab
 set expandtab " Use space whenever tab is pressed
 set shiftwidth=2 " Change number of space chars inserted for indentation
 
-set laststatus=2 " Always show the status line
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%m/%d/%y\ -\ %H:%M\")}
+" set laststatus=2 " Always show the status line
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%m/%d/%y\ -\ %H:%M\")}
 " Status line: format, type, cursor position, % complete, date, and time
 
-"In Macvim, disable GUI
-if has("gui_running")
-  set guioptions=egmrt
-endif
-
-"Type fast, :W instead of :w fix.
+"Map :W to :w for people who types too fast.
 :ca W w
 :ca Q q
 
@@ -118,11 +116,10 @@ let mapleader=","
 " html tag format after hitting Enter
 " i,n,o means insert mode, normal mode, o mode?
 inoremap <expr> <CR> '<CR>' . (search('\V>\%#<','bcn') ? '<Esc>O' : '')
-nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 
-" Copy to clipboard
-map <C-c> y:e ~/copybufferforvimclipboard<CR>P:w !pbcopy<CR><CR>:bdelete!<CR>
-map <C-d> :r !pbpaste<CR><CR>
+" Copy to clipboard - For Macs only
+"map <C-c> y:e ~/copybufferforvimclipboard<CR>P:w !pbcopy<CR><CR>:bdelete!<CR>
+"map <C-d> :r !pbpaste<CR><CR>
 
 autocmd BufNewFile,BufRead *.scss setlocal filetype=css
 " autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -132,15 +129,11 @@ au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.erb set filetype=html
 
 " set up ignore for ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|node_modules|platforms|Build)$'
 let g:ctrlp_working_path_mode = 'r'
 
-" syntastic
-let g:syntastic_javascript_checkers = ['eslint']
-
 " show whitespace as characters
-set list
+" set list
 
 set t_Co=256
 set background=dark
@@ -160,3 +153,20 @@ map <C-f> :FZF<CR>
 map <C-i> :PluginInstall<CR>
 map <C-N> :NERDTree<CR>
 map <C-_> :Ack<CR>
+
+" VIM windows movement
+map <C-h> <C-W>h
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-l> <C-W>l
+
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>f :Ack!<Space>
+
+" bind K to grep word under cursor
+nnoremap K :Ack! "\b<C-R><C-W>\b"<Space>
+
+" Ale Configuration - auto js fix
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:ale_fix_on_save = 1
