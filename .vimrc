@@ -33,6 +33,7 @@ Plugin 'Valloric/YouCompleteMe' "Autocompletion, need to python install.py on fi
 Plugin 'https://github.com/godlygeek/tabular'
 Plugin 'https://github.com/tpope/vim-unimpaired'
 Plugin 'https://github.com/itspriddle/vim-marked'
+Plugin 'ap/vim-css-color' " Shows css colors
 Plugin 'pangloss/vim-javascript'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'reasonml-editor/vim-reason'
